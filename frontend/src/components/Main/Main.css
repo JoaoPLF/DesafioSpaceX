@@ -12,9 +12,22 @@
   color: white;
 }
 
+.main .label {
+  margin-bottom: 8px;
+
+  color: white;
+  font-weight: 600;
+}
+
 .main .select {
-  width: 48px;
+  width: 100px;
   height: 48px;
+
+  border-radius: 10px;
+
+  background-color: #447cec;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.25);
 }
 
 .info {
@@ -41,6 +54,7 @@
 
   background-color: #447cec;
   color: white;
+  border: 2px solid rgba(255, 255, 255, 0.25);
 
   border-radius: 10px;
 }

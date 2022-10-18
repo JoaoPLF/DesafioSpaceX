@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        const result = await fetch(`${process.env.REACT_APP_API_URL}/${route}`);
+        const result = await fetch(`${process.env.REACT_APP_API_URL}${route}`);
         const resultJson = await result.json();
         setData(resultJson);
       }

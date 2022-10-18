@@ -14,8 +14,9 @@ const Main = ({ data }) => {
     if (Array.isArray(data)) {
       component = (
         <>
-          <select className="select" value={dataIndex} onChange={(e) => setDataIndex(e.target.value)}>
-            {data.map((d, index) => (<option value={index}>{index + 1}</option>))}
+          <label htmlFor="flightSelect" className="label">Nº do vôo: </label>
+          <select id="flightSelect" className="select" value={dataIndex} onChange={(e) => setDataIndex(e.target.value)}>
+            {data.map((d, index) => (<option key={index} value={index}>{d.flight_number}</option>))}
           </select>
           <LaunchInfo data={data[dataIndex]} />
         </>
