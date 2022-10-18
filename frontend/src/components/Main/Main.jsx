@@ -1,31 +1,45 @@
+import { useState } from "react";
+
+import Spinner from "../Spinner/Spinner";
+import LaunchInfo from "./LaunchInfo";
+
 import "./Main.css"
 
 const Main = ({ data }) => {
-  let component = null;
-  console.log(data)
+  const [dataIndex, setDataIndex] = useState(0);
 
-  if (data) {
-    if (data.error) {
+  let component = null;
+
+  if (data && !data.error) {
+    if (Array.isArray(data)) {
       component = (
-        <div className="error">
-          Não foi possível obter os dados do lançamento.
-        </div>
+        <>
+          <select className="select" value={dataIndex} onChange={(e) => setDataIndex(e.target.value)}>
+            {data.map((d, index) => (<option value={index}>{index + 1}</option>))}
+          </select>
+          <LaunchInfo data={data[dataIndex]} />
+        </>
       );
     }
     else {
       component = (
-        <img src={data.links.patch.small} alt="Patch icon" />
+        <LaunchInfo data={data} />
       );
     }
   }
 
-  if (data) {
-    return (
-      <div className="main">
-        {component}
-      </div>
-    );
-  }
+  return (
+    <div className="main">
+      {data ?
+        (data.error ?
+          (<div className="error">
+            Não foi possível obter os dados do lançamento.
+          </div>) :
+          (component)
+        ) :
+        <Spinner />}
+    </div>
+  );
 };
 
 export default Main;

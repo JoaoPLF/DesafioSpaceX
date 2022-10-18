@@ -3,10 +3,44 @@
   width: 100%;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .main .error {
   color: white;
+}
+
+.main .select {
+  width: 48px;
+  height: 48px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 300px;
+  width: 300px;
+
+  color: white;
+}
+
+.info .text {
+  padding: 12px;
+  margin: 12px 24px;
+  min-width: 300px;
+
+  background-color: #447cec;
+  color: white;
+
+  border-radius: 10px;
 }
