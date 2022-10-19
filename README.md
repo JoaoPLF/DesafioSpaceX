@@ -11,12 +11,16 @@ Este projeto tem um backend Node para consumir os dados da API da SpaceX e serv�
 
 ### Testes
 O frontend e o backend contam com arquivos de teste. Para rodá-los, use o comando `npm test` na raíz de cada pasta.
+
 Os testes de backend dependem da disponibilidade da API da SpaceX. Caso a API não esteja disponível, eles vão falhar.
+
 Alguns testes de frontend dependem da conexão com o backend, e da disponibilidade da API da SpaceX. Caso o servidor não esteja rodando e/ou a API da SpaceX não esteja disponível, eles vão falhar.
 
 ### Informações Adicionais
 Este projeto está disponível no Heroku no seguinte link: https://launchtrackerforspacex.herokuapp.com/
+
 Como o Heroku desativa as instâncias depois de um tempo sem acesso, o primeiro acesso pode demorar um pouco até que a aplicação esteja disponível novamente.
 
 A aplicação utiliza o Google Optimization para testes A/B. Existem duas variações disponíveis: original (fundo azul escuro) e variante 1 (fundo vinho). E também utiliza o Hotjar para criar um heatmap.
+
 Desligue seu adblock/antitracker antes de acessar a aplicação.
