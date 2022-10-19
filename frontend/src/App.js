@@ -17,6 +17,7 @@ function App() {
         const result = await fetch(`${process.env.REACT_APP_API_URL}${route}`);
         const resultJson = await result.json();
         setData(resultJson);
+        window.hj("stateChange", `https://launchtrackerforspacex.herokuapp.com/${route}`);
       }
       catch (err) {
         setData({ error: true });
