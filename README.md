@@ -24,3 +24,10 @@ Como o Heroku desativa as instâncias depois de um tempo sem acesso, o primeiro 
 A aplicação utiliza o Google Optimization para testes A/B. Existem duas variações disponíveis: original (fundo azul escuro) e variante 1 (fundo vinho). E também utiliza o Hotjar para criar um heatmap.
 
 Desligue seu adblock/antitracker antes de acessar a aplicação.
+
+### Original
+![Img aplicação original](original.png)
+
+
+### Variante 1
+![Img aplicação variante](variant.png)
