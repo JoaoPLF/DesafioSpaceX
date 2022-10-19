@@ -1,6 +1,5 @@
 const express = require("express");
 const { getLaunchData } = require("../utils/getLaunchData");
-const { objectToArray } = require("../utils/objectToArray");
 
 const router = express.Router();
 
@@ -29,9 +28,8 @@ router.get("/next", async (req, res) => {
 router.get("/past", async (req, res) => {
   try {
     const past = await getLaunchData("past");
-    const arrPast = objectToArray(past);
 
-    return res.send(arrPast);
+    return res.send(past);
   }
   catch (err) {
     return res.send(err);
@@ -41,9 +39,8 @@ router.get("/past", async (req, res) => {
 router.get("/upcoming", async (req, res) => {
   try {
     const upcoming = await getLaunchData("upcoming");
-    const arrUpcoming = objectToArray(upcoming);
 
-    return res.send(arrUpcoming);
+    return res.send(upcoming);
   }
   catch (err) {
     return res.send(err);

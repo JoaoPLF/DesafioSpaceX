@@ -5,18 +5,14 @@ import HeaderButton from "./HeaderButton";
 
 import "./Header.css";
 
-const Header = ({ route, setRoute }) => {
-  const handleClick = (newRoute) => {
-    if (newRoute !== route) setRoute(newRoute);
-  }
-
+const Header = ({ route, routeChangeHandler }) => {
   return (
     <header className="header">
       <img src={rocket} alt="SpaceX Tracker" width="48px" height="48px" className="rocket" />
-      <HeaderButton active={route === routes.LATEST} titulo="Último Lançamento" onClick={() => handleClick(routes.LATEST)} />
-      <HeaderButton active={route === routes.NEXT} titulo="Próximo Lançamento" onClick={() => handleClick(routes.NEXT)} />
-      <HeaderButton active={route === routes.PAST} titulo="Lançamentos Passados" onClick={() => handleClick(routes.PAST)} />
-      <HeaderButton active={route === routes.UPCOMING} titulo="Próximos Lançamentos" onClick={() => handleClick(routes.UPCOMING)} />
+      <HeaderButton active={route === routes.LATEST} titulo="Último Lançamento" onClick={() => routeChangeHandler(routes.LATEST)} />
+      <HeaderButton active={route === routes.NEXT} titulo="Próximo Lançamento" onClick={() => routeChangeHandler(routes.NEXT)} />
+      <HeaderButton active={route === routes.PAST} titulo="Lançamentos Passados" onClick={() => routeChangeHandler(routes.PAST)} />
+      <HeaderButton active={route === routes.UPCOMING} titulo="Próximos Lançamentos" onClick={() => routeChangeHandler(routes.UPCOMING)} />
     </header>
   );
 };

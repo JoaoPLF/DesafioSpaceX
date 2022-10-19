@@ -23,11 +23,14 @@
   width: 100px;
   height: 48px;
 
-  border-radius: 10px;
-
   background-color: #447cec;
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+
+  font-size: 16px;
+
+  padding: 8px;
 }
 
 .info {

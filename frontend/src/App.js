@@ -13,6 +13,7 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
+        // const result = await fetch(`https://launchtrackerforspacex.herokuapp.com/${route}`);
         const result = await fetch(`${process.env.REACT_APP_API_URL}${route}`);
         const resultJson = await result.json();
         setData(resultJson);
@@ -23,9 +24,16 @@ function App() {
     })();
   }, [route]);
 
+  const routeChangeHandler = (newRoute) => {
+    if (newRoute !== route) {
+      setRoute(newRoute);
+      setData(null);
+    }
+  };
+
   return (
     <div className="App">
-      <Header route={route} setRoute={setRoute} />
+      <Header route={route} routeChangeHandler={routeChangeHandler} />
       <Main data={data} />
     </div>
   );
